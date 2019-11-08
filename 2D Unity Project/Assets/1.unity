@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 680556626}
   - component: {fileID: 680556630}
   - component: {fileID: 680556629}
+  - component: {fileID: 680556631}
   m_Layer: 0
   m_Name: Idle (1)
   m_TagString: Untagged
@@ -303,6 +304,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &680556631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680556625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208e783eac6facf4d8d1354dcc021ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3.5
+  jump: 300
+  isGround: 0
+  name: "\u5F26"
 --- !u!1 &798249861
 GameObject:
   m_ObjectHideFlags: 0
