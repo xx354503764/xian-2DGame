@@ -13,12 +13,18 @@ public class player : MonoBehaviour
     [Header("元件")]
     public Rigidbody2D r2d;
     public Animator ani;
+    [Header("音效区域")]
+    public AudioSource aud;
+    public AudioClip soundDiamond;
 
     private void Move()
     {
         float h = Input.GetAxisRaw("Horizontal");  // 输入，取得轴向（水平），左右与AD。
         r2d.AddForce(new Vector2(speed * h , 0));
         ani.SetBool("跑步开关",h != 0);
+
+        if (Input.GetKeyDown(KeyCode.A)) transform.eulerAngles = new Vector3(0, 180, 0);
+        else if (Input.GetKeyDown(KeyCode.D)) transform.eulerAngles = new Vector3(0, 0, 0);
     }
 
     private void Jump()
@@ -27,6 +33,7 @@ public class player : MonoBehaviour
         {
             isGround = false;
             r2d.AddForce(new Vector2(0,jump));
+            ani.SetTrigger("跳跃");
         }
     }
 
@@ -40,6 +47,7 @@ public class player : MonoBehaviour
     private void Update()
     {
         Move();
+        Jump();
     }
 
     private void  OnCollisionEnter2D(Collision2D collision)
